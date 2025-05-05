@@ -3,9 +3,11 @@ Console.WriteLine($"The sum of the digits of {n} is {SumDigits(n)}");
 
 int SumDigits(int n)
 {
-    string s = n.ToString();
     int sum = 0;
-    foreach (char c in s)
-        sum += Convert.ToInt32(c) - 48;
+    while(n > 0)
+    {
+        sum += n % 10;
+        n /= 10;
+    }
     return sum;
 }
